@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Short Story Membership</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://js.stripe.com/dahlia/stripe.js"></script>
+  </head>
+  <body>
+    <div class="phone">
+      <header class="nav">
+        <button class="nav-back" type="button" aria-label="Back" disabled>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path
+              d="M15.5 5.5 8 13l7.5 7.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <h1 class="nav-title">He Exposed Me for La…</h1>
+        <span class="nav-spacer"></span>
+      </header>
+
+      <main class="store">
+        <section class="membership">
+          <h2>Short Story Membership</h2>
+          <p class="lede">Unlimited Reading of All Short Stories</p>
+          <div class="note">
+            Embedded form (ui_mode: 'form') with managed_payments — Stripe is
+            merchant of record, the form runs on this site’s own domain, and
+            wallet buttons sit at the top of the form.
+          </div>
+          <div id="store-error" class="form-error" hidden></div>
+          <div id="membership-list" class="plan-list"></div>
+        </section>
+
+        <section class="coins">
+          <h2>Coins</h2>
+          <p class="lede">One-time packs for unlocking chapters</p>
+          <div id="coin-list" class="coin-list"></div>
+        </section>
+
+        <!-- <p class="badge">Sold through Link · Stripe is merchant of record</p> -->
+      </main>
+    </div>
+
+    <div id="sheet-backdrop" class="backdrop" hidden></div>
+    <aside id="checkout-sheet" class="sheet" aria-hidden="true">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <button id="sheet-close" class="sheet-close" type="button" aria-label="Close">
+        ✕
+      </button>
+      <div id="form-error" class="form-error" hidden></div>
+      <div id="checkout-form" class="checkout-form" hidden></div>
+    </aside>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

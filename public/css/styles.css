@@ -1,0 +1,400 @@
+:root {
+  --pink: #f31260;
+  --pink-soft: #ffe4ef;
+  --text: #111111;
+  --muted: #8d8d8d;
+  --line: #ececec;
+  --card: #ffffff;
+  --page: #f4f2f6;
+  --badge: #efe6ff;
+  --badge-text: #6d28d9;
+  --shadow: 0 18px 50px rgba(20, 12, 28, 0.18);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #d9d3de;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+button {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.phone {
+  min-height: 100dvh;
+  background: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: calc(12px + env(safe-area-inset-top)) 12px 10px;
+  border-bottom: 1px solid #f2f2f2;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+}
+
+.nav-back,
+.nav-spacer {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #222;
+  padding: 0;
+}
+
+.nav-title {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.store {
+  padding: 28px 18px 40px;
+}
+
+.membership h2,
+.coins h2,
+.sheet-header h2,
+.success h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+
+.membership h2,
+.sheet-header h2 {
+  text-align: center;
+}
+
+.lede {
+  margin: 8px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+.note {
+  margin: 18px 0 16px;
+  padding: 12px 14px;
+  background: #f1f1f3;
+  color: #6f6f76;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.plan-list,
+.coin-list {
+  display: grid;
+  gap: 12px;
+}
+
+.plan-card,
+.coin-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1.5px solid #dedee3;
+  border-radius: var(--radius);
+  background: var(--card);
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.plan-card.selected {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 1px var(--pink) inset;
+}
+
+.radio {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cfcfd4;
+  border-radius: 50%;
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+}
+
+.plan-card.selected .radio {
+  border-color: var(--pink);
+}
+
+.radio span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.plan-card.selected .radio span {
+  background: var(--pink);
+}
+
+.plan-copy {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.plan-price {
+  text-align: right;
+}
+
+.compare {
+  margin: 0;
+  color: #b0b0b0;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.price {
+  margin: 2px 0 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.coins {
+  margin-top: 32px;
+}
+
+.coins .lede {
+  margin-bottom: 16px;
+}
+
+.coin-card {
+  justify-content: space-between;
+}
+
+.coin-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.coin-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffd56a, #f5a623);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.coin-name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.coin-meta {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.chip {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--pink-soft);
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.badge {
+  display: block;
+  width: fit-content;
+  margin: 28px auto 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--badge);
+  color: var(--badge-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 24, 0.45);
+  z-index: 20;
+}
+
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -110%;
+  z-index: 21;
+  max-height: 92dvh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 22px 22px 0 0;
+  box-shadow: var(--shadow);
+  padding: 8px 18px calc(20px + env(safe-area-inset-bottom));
+  transition: bottom 0.34s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.sheet.open {
+  bottom: 0;
+}
+
+.sheet-handle {
+  width: 42px;
+  height: 5px;
+  margin: 6px auto 12px;
+  border-radius: 99px;
+  background: #ddd;
+}
+
+.sheet-close {
+  position: absolute;
+  top: 16px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #f3f3f5;
+  color: #444;
+}
+
+.checkout-form {
+  min-height: 220px;
+}
+
+.form-skeleton,
+.form-error {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f6f6f8;
+  color: #666;
+  text-align: center;
+}
+
+.form-error {
+  background: #fff1f4;
+  color: #b01040;
+  margin-bottom: 12px;
+}
+
+.success {
+  min-height: calc(100dvh - 20px);
+  display: grid;
+  place-items: center;
+  padding: 24px 18px;
+}
+
+.success-card {
+  width: 100%;
+  text-align: center;
+}
+
+.success-mark {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f8ee;
+  color: #14804a;
+  font-size: 34px;
+}
+
+.success-card.failed .success-mark {
+  background: #fff1f4;
+  color: #b01040;
+}
+
+.receipt {
+  margin: 22px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f7f6f9;
+  text-align: left;
+}
+
+.receipt div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.receipt dt {
+  color: var(--muted);
+}
+
+.receipt dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.primary-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (min-width: 520px) {
+  body {
+    display: grid;
+    place-items: center;
+    padding: 28px 0;
+  }
+
+  .phone {
+    width: 390px;
+    min-height: 780px;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .backdrop,
+  .sheet {
+    width: 390px;
+    left: 50%;
+    right: auto;
+    margin-left: -195px;
+  }
+}
